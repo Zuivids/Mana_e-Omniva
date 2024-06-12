@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -47,10 +48,11 @@ public class Person {
 	@Pattern(regexp = "[0-9]{6}-[0-9]{5}", message = "Only numbers and '-' are allowed")
 	private String personCode;
 
-	// TODO izveidot saiti uz CustomerAsPerson
+	@OneToOne(mappedBy = "person")
+	@ToString.Exclude
 	private CustomerAsPerson customerAsPerson;
 
-	public Person(String name, String surname, String person_code) {
+	public Person(String name, String person_code, String surname) {
 		setName(name);
 		setSurname(surname);
 		setPersonCode(person_code);

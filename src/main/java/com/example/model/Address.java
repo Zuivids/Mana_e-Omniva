@@ -1,10 +1,13 @@
 package com.example.model;
 
+import java.util.Collection;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -43,7 +46,9 @@ public class Address {
 	@Size(min = 3, max = 30)
 	private String streetOrHouseTitle;
 	
-	//TODO izveidot saiti uz AbstractCustomer
+	@OneToMany(mappedBy = "address")
+	@ToString.Exclude
+	private Collection<AbstractCustomer> abstarctCustomer;
 	
 	
 	public Address(City city, int houseNo, String streetOrHouseTitle) {

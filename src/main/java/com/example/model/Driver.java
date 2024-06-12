@@ -1,7 +1,10 @@
 package com.example.model;
 
+import java.util.Collection;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -30,7 +33,9 @@ public class Driver extends Person {
 	@Pattern(regexp = "[A]{1}[T]{1}[0-9]{6}", message = "Invalid license no")
 	private String licenseNo;
 	
-	//TODO izveidot saiti uz Parcel
+	@OneToMany(mappedBy = "driver")
+	@ToString.Exclude
+	private Collection<Parcel> parcels;
 	
 	public Driver(String name , String surname, String personCode, float experienceInYears, String licenseNo ) {
 

@@ -2,12 +2,13 @@ package com.example.model;
 
 import java.time.LocalDateTime;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
@@ -52,10 +53,12 @@ public class Parcel {
 	@NotNull
 	private Size size;
 
-	// TODO saites izveide
+	@ManyToOne
+	@JoinColumn(name = "IDP")
 	private Driver driver;
 
-	// TODO saites izveide
+	@ManyToOne
+	@JoinColumn(name = "IDC")
 	private AbstractCustomer customer;
 
 
