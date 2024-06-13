@@ -1,5 +1,9 @@
 package com.example.repo;
 
-public interface IAbstractCustomerRepo {
+import org.springframework.data.repository.CrudRepository;
+
+import com.example.model.AbstractCustomer;
+
+public interface IAbstractCustomerRepo extends CrudRepository<AbstractCustomer, Integer>{
 
 }

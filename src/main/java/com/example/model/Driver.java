@@ -23,11 +23,11 @@ import lombok.ToString;
 @Entity
 public class Driver extends Person {
 	
-	@Column(name = "Experience_in_years")
+	@Column(name = "ExperienceInYears")
 	@Min(1)
 	private float experienceInYears;
 	
-	@Column(name = "License_no")
+	@Column(name = "LicenseNo")
 	@NotNull
 	@Size(min = 8, max = 8)
 	@Pattern(regexp = "[A]{1}[T]{1}[0-9]{6}", message = "Invalid license no")

@@ -1,5 +1,9 @@
 package com.example.repo;
 
-public interface IPersonRepo {
+import org.springframework.data.repository.CrudRepository;
+
+import com.example.model.Person;
+
+public interface IPersonRepo extends CrudRepository<Person, Integer> {
 
 }

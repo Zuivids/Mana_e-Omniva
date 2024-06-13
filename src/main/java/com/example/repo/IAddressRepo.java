@@ -1,5 +1,9 @@
 package com.example.repo;
 
-public interface IAddressRepo {
+import org.springframework.data.repository.CrudRepository;
+
+import com.example.model.Address;
+
+public interface IAddressRepo extends CrudRepository<Address, Integer> {
 
 }

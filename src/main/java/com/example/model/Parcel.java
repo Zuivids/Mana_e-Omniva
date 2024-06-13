@@ -54,11 +54,11 @@ public class Parcel {
 	private Size size;
 
 	@ManyToOne
-	@JoinColumn(name = "IDP")
+	@JoinColumn(name = "Idp")
 	private Driver driver;
 
 	@ManyToOne
-	@JoinColumn(name = "IDC")
+	@JoinColumn(name = "Idc")
 	private AbstractCustomer customer;
 
 

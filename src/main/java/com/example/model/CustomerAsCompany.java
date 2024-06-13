@@ -32,11 +32,6 @@ public class CustomerAsCompany extends AbstractCustomer{
 	@Setter
 	private String companyRegNo;
 	
-//  private int idc;	
-//	private String customerCode;
-//	private String phoneNo;
-//	private String adress;
-	
 	public CustomerAsCompany(String title, String companyRegNo) {
 		setTitle(title);
 		setCompanyRegNo(companyRegNo);

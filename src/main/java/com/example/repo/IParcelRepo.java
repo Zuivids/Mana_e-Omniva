@@ -1,5 +1,9 @@
 package com.example.repo;
 
-public interface IParcelRepo {
+import org.springframework.data.repository.CrudRepository;
+
+import com.example.model.Parcel;
+
+public interface IParcelRepo extends CrudRepository<Parcel, Integer> {
 
 }
