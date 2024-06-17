@@ -34,10 +34,8 @@ public class CustomerAsPerson extends AbstractCustomer{
 	@Setter
 	private String adress;
 
-	public CustomerAsPerson(String customerCode, String phoneNo, String adress) {
-
-		setCustomerCode(customerCode);
-		setPhoneNo(phoneNo);
-		setAdress(adress);
+	public CustomerAsPerson(Person idp, Person person_code , String phoneNo, Address address) {
+		super(phoneNo,address);
+		
 	}
 }
