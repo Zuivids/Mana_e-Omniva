@@ -6,4 +6,6 @@ import com.example.model.Driver;
 
 public interface IDriverRepo extends CrudRepository<Driver , Integer> {
 
+	Driver findByPersonCode(String personCode);
+
 }

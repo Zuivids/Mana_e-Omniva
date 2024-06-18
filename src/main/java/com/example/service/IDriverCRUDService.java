@@ -10,7 +10,7 @@ public interface IDriverCRUDService {
 
 	public Driver selectDriverById(int id) throws Exception;
 
-	public void deleteDriverById(int Id) throws Exception;
+	public void deleteDriverById(int id) throws Exception;
 
 	public void insertNewDriver(Driver driver) throws Exception;
 
