@@ -6,4 +6,6 @@ import com.example.model.CustomerAsPerson;
 
 public interface ICustomerAsPersonRepo extends CrudRepository<CustomerAsPerson, Integer> {
 
+	CustomerAsPerson findByCustomerCode(String customer_code);
+
 }

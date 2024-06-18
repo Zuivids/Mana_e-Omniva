@@ -6,4 +6,6 @@ import com.example.model.CustomerAsCompany;
 
 public interface ICustomerAsCompanyRepo extends CrudRepository<CustomerAsCompany, Integer> {
 
+	CustomerAsCompany findByCustomerCode(String customer_code);
+
 }
