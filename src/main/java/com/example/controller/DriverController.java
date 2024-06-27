@@ -21,7 +21,6 @@ public class DriverController {
 	@Autowired
 	private IDriverCRUDService driverCRUD;
 
-//	i. Get - /driver/show/all
 	@GetMapping("/show/all") // localhost:8080/driver/show/all
 	public String getDriverList(Model model) {
 		try {
@@ -34,7 +33,6 @@ public class DriverController {
 		}
 	}
 
-//	ii. Get - /driver/show/all/{id}
 	@GetMapping("/show/all/{id}") // localhost:8080/driver/show/all/4
 	public String getDriverById(@PathVariable("id") int id, Model model) {
 		try {
@@ -47,7 +45,6 @@ public class DriverController {
 		}
 	}
 
-//	iii. Get - /driver/remove/{id}
 	// TODO Not working
 	@GetMapping("/remove/{id}") // localhost:8080/driver/remove/4
 	public String getDriverDeleteById(@PathVariable("id") int id, Model model) {
@@ -62,7 +59,6 @@ public class DriverController {
 		}
 	}
 
-//	iv. Get un Post- /driver/add
 	// TODO Not working
 	@GetMapping("/add") // localhost:8080/driver/add
 	public String getDriverInsert(Model model) {
@@ -83,7 +79,6 @@ public class DriverController {
 		return "redirect:/driver/show/all";
 	}
 
-//	v. Get un Post - /driver/update/{id}
 	@GetMapping("/update/{id}") // localhost:8080/driver/update/1
 	public String getDriverUpdateById(@PathVariable("id") int id, Model model) {
 		try {
