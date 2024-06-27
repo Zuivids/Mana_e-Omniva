@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+		<table border="1">
+
+			<tr>
+				<td><b>Driver ID:</b></td>
+				<td><b>Driver Name:</b></td>
+				<td><b>Driver Surname:</b></td>
+				<td><b>Driver PersonCode:</b></td>
+				<td><b>Driver LicenseNo:</b></td>
+				<td><b>Driver Experiance in years:</b></td>
+
+			</tr>
+			<tr>
+				<td th:text="${driver.getIdp()}"></td>
+				<td th:text="${driver.getName()}"></td>
+				<td th:text="${driver.getSurname()}"></td>
+				<td th:text="${driver.getPersonCode()}"></td>
+				<td th:text="${driver.getLicenseNo()}"></td>
+				<td th:text="${driver.getExperienceInYears()}"></td>
+			</tr>
+		</table>
+</body>
+
+</html>
