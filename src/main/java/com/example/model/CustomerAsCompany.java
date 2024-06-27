@@ -32,14 +32,12 @@ public class CustomerAsCompany extends AbstractCustomer{
 	@Setter
 	private String companyRegNo;
 	
-	@Column(name = "Adress")
-	@Setter
-	private String adress;
 	
 	public CustomerAsCompany(String title, String companyRegNo, String phoneNo, Address address) {
 		super(phoneNo,address);
 		setTitle(title);
 		setCompanyRegNo(companyRegNo);
+		setCustomerCode("0_company_"+companyRegNo);
 		
 	}
 	

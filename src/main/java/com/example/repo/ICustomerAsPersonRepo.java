@@ -8,4 +8,6 @@ public interface ICustomerAsPersonRepo extends CrudRepository<CustomerAsPerson, 
 
 	CustomerAsPerson findByCustomerCode(String customer_code);
 
+	CustomerAsPerson findByPersonPersonCode(String person_code);
+
 }

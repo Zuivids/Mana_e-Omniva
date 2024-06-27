@@ -38,10 +38,7 @@ public class Driver extends Person {
 	private Collection<Parcel> parcels;
 	
 	public Driver(String name , String surname, String personCode, float experienceInYears, String licenseNo ) {
-
-		setName(surname);
-		setSurname(surname);
-		setPersonCode(personCode);
+		super(name, personCode, surname);
 		setExperienceInYears(experienceInYears);
 		setLicenseNo(licenseNo);
 		

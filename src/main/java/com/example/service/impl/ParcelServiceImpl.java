@@ -6,10 +6,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.model.AbstractCustomer;
 import com.example.model.City;
-import com.example.model.CustomerAsCompany;
-import com.example.model.CustomerAsPerson;
 import com.example.model.Parcel;
 import com.example.repo.IAbstractCustomerRepo;
 import com.example.repo.ICustomerAsCompanyRepo;
@@ -40,7 +37,7 @@ public class ParcelServiceImpl implements IParcelService {
 
 		if (!abstractCustRepo.existsById(id))
 			throw new Exception("Customer with " + id + " doesn't exist");
-		ArrayList<Parcel> result = parcelRepo.findByAbstractCustomerIdc(id);
+		ArrayList<Parcel> result = parcelRepo.findByCustomerIdc(id);
 
 		if (result.isEmpty())
 			throw new Exception("There is no parcel with " + id + " ID as customer");
@@ -70,7 +67,7 @@ public class ParcelServiceImpl implements IParcelService {
 
 	@Override
 	public ArrayList<Parcel> selectAllParcelsDeliveredToCity(City city) throws Exception {
-		ArrayList<Parcel> result = parcelRepo.findByAbstractCustomerAddressCity(city);
+		ArrayList<Parcel> result = parcelRepo.findByCustomerAddressCity(city);
 		if (result.isEmpty())
 			throw new Exception("No parcel(s) to city " + city);
 		return result;
@@ -84,7 +81,6 @@ public class ParcelServiceImpl implements IParcelService {
 		if (driverRepo.findById(id) == null)
 			throw new Exception("Driver with " + id + " ID does not exists!");
 		Parcel newParcel = parcel;
-		//TODO
 
 	}
 

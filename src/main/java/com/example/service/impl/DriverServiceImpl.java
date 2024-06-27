@@ -29,7 +29,7 @@ public class DriverServiceImpl implements IDriverCRUDService {
 			throw new Exception("ID cant be negative ");
 
 		if (driverRepo.existsById(id)) {
-			return driverRepo.findById(id).get();
+			return driverRepo.findById(id);
 		} else {
 			throw new Exception("Driver with " + id + ".ID is not found");
 		}
@@ -61,9 +61,9 @@ public class DriverServiceImpl implements IDriverCRUDService {
 	public void updateDriverById(int id, Driver driver) throws Exception {
 		if (id < 0)
 			throw new Exception("ID cant be negative ");
-
+		if (!driverRepo.existsById(id))
+			throw new Exception("Driver is not exisitng in DB!");
 		Driver driverForUpdating = selectDriverById(id);
-
 		driverForUpdating.setName(driver.getName());
 		driverForUpdating.setSurname(driver.getSurname());
 		driverForUpdating.setPersonCode(driver.getPersonCode());

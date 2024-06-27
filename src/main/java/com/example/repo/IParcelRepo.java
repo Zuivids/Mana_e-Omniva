@@ -10,13 +10,13 @@ import com.example.model.Parcel;
 
 public interface IParcelRepo extends CrudRepository<Parcel, Integer> {
 
-	ArrayList<Parcel> findByAbstractCustomerIdc(int id);
+	ArrayList<Parcel> findByCustomerIdc(int id);
 
 	ArrayList<Parcel> findByDriverIdp(int id);
 
 	ArrayList<Parcel> findByPriceLessThan(float price);
 
-	ArrayList<Parcel> findByAbstractCustomerAddressCity(City city);
+	ArrayList<Parcel> findByCustomerAddressCity(City city);
 
 	@Query(nativeQuery = true, value = "SELECT sum(price) FROM parcel WHERE idc=(?1);")
 	float calculateIncomeCustomerById(int id);
