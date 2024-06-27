@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	
+	<table border="1">
+
+		<tr>
+			<td><b>Parcel ID:</b></td>
+			<td><b>Parcel is fragile :</b></td>
+			<td><b>Parcel size:</b></td>
+			<td><b>Parcel pric:</b></td>
+			<td><b>Parcel order created:</b></td>
+			<td><b>Parcel order delivery:</b></td>
+
+		</tr>
+		
+		<tr>
+			<td th:text="${parcel.getIdpa()}"></td>
+			<td th:text="${parcel.getIsFragile()}"></td>
+			<td th:text="${parcel.getSize()}"></td>
+			<td th:text="${parcel.getPrice()}"></td>
+			<td th:text="${parcel.getOrderCreated()}"></td>
+			<td th:text="${parcel.getOrderDelivery()}"></td>
+		</tr>
+		
+	</table>
+	
+</body>
+
+</html>
