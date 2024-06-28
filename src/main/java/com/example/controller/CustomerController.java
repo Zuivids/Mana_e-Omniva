@@ -26,4 +26,10 @@ public class CustomerController {
 			return "error-page";
 		}
 	}
+	
+//	i. Get un Post - /customer/create/person
+	
+//	ii. Get un Post - /customer/create/company
+	
+//	iii. Get un Post - /customer/add/address/{customerid}
 }

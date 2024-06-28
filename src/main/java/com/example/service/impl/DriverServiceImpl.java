@@ -8,12 +8,16 @@ import org.springframework.stereotype.Service;
 import com.example.model.Driver;
 import com.example.repo.IDriverRepo;
 import com.example.service.IDriverCRUDService;
+import com.example.service.IParcelService;
 
 @Service
 public class DriverServiceImpl implements IDriverCRUDService {
 
 	@Autowired
 	private IDriverRepo driverRepo;
+	
+	@Autowired
+	private IParcelService parcelCRUD;
 
 	@Override
 	public ArrayList<Driver> selectAllDriver() throws Exception {
@@ -42,6 +46,7 @@ public class DriverServiceImpl implements IDriverCRUDService {
 
 		Driver deleteDriver = selectDriverById(id);
 
+		parcelCRUD.removeParcelByDriver(id);
 		driverRepo.delete(deleteDriver);
 
 	}
@@ -50,8 +55,8 @@ public class DriverServiceImpl implements IDriverCRUDService {
 	public void insertNewDriver(Driver driver) throws Exception {
 		Driver checkIfNotCreatedDriver = driverRepo.findByPersonCode(driver.getPersonCode());
 
-		if (checkIfNotCreatedDriver != null)
-			throw new Exception("Driver with person code: " + driver.getPersonCode() + " is existing in DB!");
+		if (checkIfNotCreatedDriver == null)
+			throw new Exception("Driver is null!");
 
 		driverRepo.save(driver);
 

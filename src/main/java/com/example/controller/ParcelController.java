@@ -69,7 +69,17 @@ public class ParcelController {
 		}
 	}
 //	v. Get un Post - /parcel/add/{customercode}/{driverid}
-
+//	@GetMapping("/parcel/add/{customercode}/{driverid}") // localhost:8080/parcel/add/3/4
+//	public String setParcelByCustomerCodeAndDriverId(@PathVariable("customerCode") String customerCode , Model model) {
+//		try {
+//			model.addAttribute("parcel", parcelCRUD.insertNewParcelByCustomerCodeAndDriverId(customerCode, 0, null));
+//			return "parcel-one-page";
+//		} catch (Exception e) {
+//			model.addAttribute("msg", e.getMessage());
+//			e.printStackTrace();
+//			return "error-page";
+//		}
+//	}
 //	vi. Get - /parcel/change/{parcelid}/{driverid}
 
 //	vii. Get - /parcel/calculate/income/{customerid}

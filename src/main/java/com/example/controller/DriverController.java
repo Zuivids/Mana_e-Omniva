@@ -36,6 +36,7 @@ public class DriverController {
 	@GetMapping("/show/all/{id}") // localhost:8080/driver/show/all/4
 	public String getDriverById(@PathVariable("id") int id, Model model) {
 		try {
+			
 			model.addAttribute("driver", driverCRUD.selectDriverById(id));
 			return "driver-one-page";
 		} catch (Exception e) {
@@ -50,7 +51,8 @@ public class DriverController {
 	public String getDriverDeleteById(@PathVariable("id") int id, Model model) {
 		try {
 			driverCRUD.deleteDriverById(id);
-			model.addAttribute("driver", driverCRUD.selectAllDriver());
+			
+			model.addAttribute("drivers", driverCRUD.selectAllDriver());
 			return "driver-all-page";
 		} catch (Exception e) {
 			model.addAttribute("msg", e.getMessage());

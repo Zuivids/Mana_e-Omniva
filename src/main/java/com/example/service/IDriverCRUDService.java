@@ -15,5 +15,6 @@ public interface IDriverCRUDService {
 	public void insertNewDriver(Driver driver) throws Exception;
 
 	public void updateDriverById(int id, Driver driver) throws Exception;
+	
 
 }

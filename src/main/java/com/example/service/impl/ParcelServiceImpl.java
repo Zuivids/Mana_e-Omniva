@@ -50,8 +50,8 @@ public class ParcelServiceImpl implements IParcelService {
 		if (id < 0)
 			throw new Exception("ID cant be negative");
 		ArrayList<Parcel> result = parcelRepo.findByDriverIdp(id);
-		if (result.isEmpty())
-			throw new Exception("There is no parcel with this id: " + id);
+//		if (result.isEmpty())
+//			throw new Exception("There is no parcel with this id: " + id);
 		return result;
 	}
 
@@ -120,6 +120,16 @@ public class ParcelServiceImpl implements IParcelService {
 		String combinedDate = "'" + todayYear + "-" + todayMonth + "-" + todayDay + "'%";
 		int result = parcelRepo.countOfDeliveryForToday(combinedDate);
 		return result;
+	}
+
+	@Override
+	public void removeParcelByDriver(int id) throws Exception {
+		
+		for( Parcel parcel : selectAllParcelsDeliveredByDriverId(id)) {
+			parcel.setDriver(null);
+			parcelRepo.save(parcel);
+		}
+		
 	}
 
 }

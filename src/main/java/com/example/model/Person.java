@@ -55,10 +55,10 @@ public class Person {
 	@ToString.Exclude
 	private CustomerAsPerson customerAsPerson;
 
-	public Person(String name, String person_code, String surname) {
+	public Person(String name, String personCode, String surname) {
 		setName(name);
 		setSurname(surname);
-		setPersonCode(person_code);
+		setPersonCode(personCode);
 		
 	}
 

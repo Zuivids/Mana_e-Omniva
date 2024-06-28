@@ -22,4 +22,6 @@ public interface IParcelService {
 	public float calculateIncomeOfParcelsByCustomerId(int id) throws Exception;
 	
 	public int calculateHowManyParcelsNeedToDeliverToday() throws Exception;
+	
+	public void removeParcelByDriver(int id) throws Exception;
 }
