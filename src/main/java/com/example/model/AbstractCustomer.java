@@ -48,9 +48,9 @@ public class AbstractCustomer {
 	@JoinColumn(name = "Ida")
 	private Address address;
 
-	@OneToMany(mappedBy = "customer")
+	@OneToOne(mappedBy = "customer")
 	@ToString.Exclude
-	private Collection<Parcel> parcel;
+	private Parcel parcel;
 
 	public AbstractCustomer(String phoneNo, Address address) {
 		setPhoneNo(phoneNo);

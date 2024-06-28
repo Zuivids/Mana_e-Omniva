@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
@@ -57,10 +58,9 @@ public class Parcel {
 	@JoinColumn(name = "Idp")
 	private Driver driver;
 
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name = "Idc")
 	private AbstractCustomer customer;
-
 
 	public Parcel(boolean isFragile, Size size, float price, LocalDateTime orderCreated, LocalDateTime planedDelivery,
 			AbstractCustomer customer, Driver driver) {

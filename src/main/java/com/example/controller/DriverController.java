@@ -46,7 +46,6 @@ public class DriverController {
 		}
 	}
 
-	// TODO Not working
 	@GetMapping("/remove/{id}") // localhost:8080/driver/remove/4
 	public String getDriverDeleteById(@PathVariable("id") int id, Model model) {
 		try {
@@ -61,7 +60,6 @@ public class DriverController {
 		}
 	}
 
-	// TODO Not working
 	@GetMapping("/add") // localhost:8080/driver/add
 	public String getDriverInsert(Model model) {
 		model.addAttribute("driver", new Driver());
