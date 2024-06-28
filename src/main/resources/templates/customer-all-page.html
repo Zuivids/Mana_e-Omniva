@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+	<p>All Customers</p>
+
+	<table border="1">
+
+		<tr>
+			<td><b>Customer ID:</b></td>
+			<td><b>Customer Phone No:</b></td>
+			<td><b>Customer Address:</b></td>
+			<td><b>Customer As Company:</b></td>
+			<td><b>Customer As Person:</b></td>
+
+		</tr>
+			<tr th:each="customer : ${customers}">
+			<td th:text="${customer.getIdc()}"></td>
+			<td th:text="${customer.getPhoneNo()}"></td>
+			<td th:text="${customer.getAddress()}"></td>
+			<td th:text="${customer.getCustomerAsCompany()}"></td>
+			<td th:text="${customer.getCustomerAsPerson()}"></td>
+		</tr>
+	</table>
+</body>
+
+</html>
